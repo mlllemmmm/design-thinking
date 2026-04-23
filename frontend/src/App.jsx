@@ -14,6 +14,7 @@ import ProfilePage from "./pages/ProfilePage";
 import BlogPage from "./pages/BlogPage";
 import LoginPage from "./pages/LoginPage";
 import MentalCheckupPage from "./pages/MentalCheckupPage";
+import { API } from "./config";
 
 
 /* ================= NAVBAR ================= */
@@ -298,7 +299,7 @@ function XrayPage() {
       setResult(null);
 
       const response = await fetch(
-        `http://127.0.0.1:5000${endpoint}`,
+        `${API}${endpoint}`,
         {
           method: "POST",
           body: formData,
@@ -414,7 +415,7 @@ function BloodTestPage() {
 
     try {
       setLoading(true);
-      const response = await fetch("http://127.0.0.1:5000/analyze-blood-report", {
+      const response = await fetch(`${API}/analyze-blood-report`, {
         method: "POST",
         body: formData,
       });

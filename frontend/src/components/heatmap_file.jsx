@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet.heat";
+import { API } from "../config";
 
 function HeatmapLayerComponent({ points }) {
   const map = useMap();
@@ -31,7 +32,7 @@ function DiseaseMap() {
   const [hotspots, setHotspots] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/heatmap-data')
+    fetch(`${API}/api/heatmap-data`)
       .then(response => response.json())
       .then(data => {
         console.log("Data received:", data);

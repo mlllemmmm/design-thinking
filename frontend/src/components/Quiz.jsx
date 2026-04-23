@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./../styles/quiz.css";
 import questions from "./questions";
-
-const API_BASE = "http://127.0.0.1:5000";
+import { API } from "../config";
 
 export default function Quiz() {
   const [formData, setFormData] = useState({});
@@ -37,9 +36,9 @@ export default function Quiz() {
 
     try {
       const responses = await Promise.allSettled([
-        safeFetch(`${API_BASE}/predict/heart`),
-        safeFetch(`${API_BASE}/predict/diabetes`),
-        safeFetch(`${API_BASE}/predict/lung-risk`),
+        safeFetch(`${API}/predict/heart`),
+        safeFetch(`${API}/predict/diabetes`),
+        safeFetch(`${API}/predict/lung-risk`),
       ]);
 
       const [heartRes, diabetesRes, lungRes] = responses;

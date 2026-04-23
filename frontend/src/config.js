@@ -1,1 +1,5 @@
-export const BACKEND_URL = "http://localhost:5000";
+export const API = import.meta.env.VITE_API_URL;
+
+if (!API) {
+  console.warn("VITE_API_URL is undefined. Backend requests may fail.");
+}

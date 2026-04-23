@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import "../styles/health-chat.css";
+import { API } from "../config";
 
 function formatReply(text) {
   return String(text || "")
@@ -30,7 +31,7 @@ export default function HealthChat() {
     setMessages((prev) => [...prev, userMessage]);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/chat", {
+      const response = await fetch(`${API}/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
