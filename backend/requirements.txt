@@ -1,0 +1,15 @@
+Flask
+Flask-Cors
+python-dotenv
+requests
+tensorflow
+numpy
+pandas
+scikit-learn
+joblib
+Pillow
+pdfplumber
+pytesseract
+pdf2image
+gunicorn
+
