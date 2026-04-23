@@ -180,7 +180,9 @@ COUNTRY_COORDS = {
 }
 
 
-
+@app.route("/health")
+def health():
+    return {"status": "ok"}
 
 # --- HEATMAP ROUTE ---
 import numpy as np
