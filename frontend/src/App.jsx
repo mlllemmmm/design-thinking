@@ -15,6 +15,8 @@ import BlogPage from "./pages/BlogPage";
 import LoginPage from "./pages/LoginPage";
 import MentalCheckupPage from "./pages/MentalCheckupPage";
 import { API } from "./config";
+import WellnessPage from "./pages/WellnessPage";
+import DailyTracker from "./pages/DailyTracker";
 
 
 /* ================= NAVBAR ================= */
@@ -37,6 +39,8 @@ function Navbar() {
         <Link to="/mental-health">{t("navbar.mentalHealth")}</Link>
         <Link to="/blood-test">Blood Test Analysis</Link>
         <Link to="/chat">AI Assistant</Link>
+        <Link to="/wellness">Wellness</Link>
+        <Link to="/tracker">Daily Tracker</Link>
         <Link to="/book-appointment">Book</Link>
         <Link to="/profile">Profile</Link>
         <Link to="/blog">Blog</Link>
@@ -165,6 +169,45 @@ function HomePage() {
               </div>
             )
           )}
+        </div>
+      </section>
+
+      {/* ================= HOW TO USE SECTION ================= */}
+      <section style={{ padding: "40px 20px", maxWidth: "1200px", margin: "0 auto", textAlign: "center" }}>
+        <h2 style={{ fontSize: "2rem", marginBottom: "30px", color: "#064e3b" }}>How to Use AarogyaAI</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "20px", textAlign: "left" }}>
+          <div style={{ background: "#f0fdf4", padding: "20px", borderRadius: "10px", border: "1px solid #bbf7d0" }}>
+            <h3 style={{ fontSize: "1.2rem", color: "#166534", marginBottom: "10px" }}>1. Risk Detection</h3>
+            <ul style={{ paddingLeft: "15px", color: "#334155" }}>
+              <li>Detect heart, diabetes, and lung risks</li>
+              <li>Calculates your overall wellness score</li>
+            </ul>
+          </div>
+          <div style={{ background: "#f0fdf4", padding: "20px", borderRadius: "10px", border: "1px solid #bbf7d0" }}>
+            <h3 style={{ fontSize: "1.2rem", color: "#166534", marginBottom: "10px" }}>2. Mental Health Quiz</h3>
+            <ul style={{ paddingLeft: "15px", color: "#334155" }}>
+              <li>Helps measure stress and mental wellness</li>
+              <li>Contributes to your wellness score</li>
+            </ul>
+          </div>
+          <div style={{ background: "#f0fdf4", padding: "20px", borderRadius: "10px", border: "1px solid #bbf7d0" }}>
+            <h3 style={{ fontSize: "1.2rem", color: "#166534", marginBottom: "10px" }}>3. Blood Report Analysis</h3>
+            <ul style={{ paddingLeft: "15px", color: "#334155" }}>
+              <li>Upload your blood report for simplified insights</li>
+            </ul>
+          </div>
+          <div style={{ background: "#f0fdf4", padding: "20px", borderRadius: "10px", border: "1px solid #bbf7d0" }}>
+            <h3 style={{ fontSize: "1.2rem", color: "#166534", marginBottom: "10px" }}>4. Outbreak Map</h3>
+            <ul style={{ paddingLeft: "15px", color: "#334155" }}>
+              <li>View disease outbreaks and stay aware</li>
+            </ul>
+          </div>
+          <div style={{ background: "#f0fdf4", padding: "20px", borderRadius: "10px", border: "1px solid #bbf7d0" }}>
+            <h3 style={{ fontSize: "1.2rem", color: "#166534", marginBottom: "10px" }}>5. AI Chatbot</h3>
+            <ul style={{ paddingLeft: "15px", color: "#334155" }}>
+              <li>Ask health-related questions anytime</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -552,6 +595,8 @@ function AppContent() {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/blood-test" element={<BloodTestPage />} />
+          <Route path="/wellness" element={<WellnessPage />} />
+          <Route path="/tracker" element={<DailyTracker />} />
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </div>

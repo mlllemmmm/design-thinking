@@ -70,17 +70,17 @@ const questions = [
   },
   {
     id: "Fruit_Consumption",
-    label: "Fruit consumption per day (servings)",
+    label: "Fruit consumption per day (servings) (Please enter an integer)",
     type: "number"
   },
   {
     id: "Green_Vegetables_Consumption",
-    label: "Green vegetables per day (servings)",
+    label: "Green vegetables per day (servings) (Please enter an integer)",
     type: "number"
   },
   {
     id: "FriedPotato_Consumption",
-    label: "Fried / junk food consumption per week",
+    label: "Fried / junk food consumption per week (Please enter an integer)",
     type: "number"
   },
   {
